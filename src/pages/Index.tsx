@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -215,7 +214,7 @@ const Index = () => {
               Desa Sukaharja adalah desa yang kaya akan hasil pertanian dan berkomitmen pada digitalisasi untuk kemudahan akses produk berkualitas
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
                 src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&h=400&fit=crop" 
@@ -224,9 +223,15 @@ const Index = () => {
               />
             </div>
             <div>
-              <h4 className="text-2xl font-bold text-green-800 mb-4">Visi & Misi Desa</h4>
-              <p className="text-gray-700 mb-4">
-                Menjadi desa yang mandiri dan modern dengan memanfaatkan teknologi digital untuk memasarkan hasil pertanian lokal secara luas.
+              <h4 className="text-2xl font-bold text-green-800 mb-6">Profil Desa Sukaharja</h4>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                Desa di bagian barat Kecamatan Cijeruk, Kabupaten Bogor ini memiliki potensi agrikultur besar dengan luas 531,56 hektare dan penduduk sekitar 14.863 jiwa, mayoritas petani dan buruh tani.
+              </p>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                Komoditas unggulan seperti talas, nanas, dan tanaman hias menjadi ciri khasnya, namun belum dimanfaatkan secara optimal karena kurangnya inovasi dan pengetahuan bisnis.
+              </p>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                Inovasi pangan penting untuk keberlanjutan desa melalui pengembangan varietas baru, teknologi pertanian efisien, dan pemanfaatan sumber daya alam yang berkelanjutan.
               </p>
               <Button 
                 className="bg-green-600 hover:bg-green-700"
