@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -217,13 +218,39 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&h=400&fit=crop" 
-                alt="Desa Sukaharja"
+                src="/lovable-uploads/dcc5ef76-3da3-4e64-aa52-92e61dcf337f.png" 
+                alt="Peta Desa Sukaharja"
                 className="w-full h-64 object-cover rounded-lg shadow-lg"
               />
             </div>
             <div>
               <h4 className="text-2xl font-bold text-green-800 mb-6">Profil Desa Sukaharja</h4>
+              <div className="space-y-4 mb-6">
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <p className="text-gray-700 font-medium mb-2">📍 Alamat:</p>
+                  <p className="text-gray-600">Jl. Raya Pondok Bitung No.73, RT.03/RW.2, Sukaharja, Kec. Cijeruk, Kab. Bogor, Jawa Barat</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <p className="text-gray-700 font-medium mb-2">📏 Luas Wilayah:</p>
+                  <p className="text-gray-600">531,56 Hektare</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <p className="text-gray-700 font-medium mb-2">🏘️ Struktur Wilayah:</p>
+                  <ul className="text-gray-600 space-y-1">
+                    <li>• Dusun: 3, RW: 9, RT: 50</li>
+                    <li>• Penduduk: ±14.863 jiwa (mayoritas petani dan buruh tani)</li>
+                  </ul>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <p className="text-gray-700 font-medium mb-2">🗺️ Batas Wilayah:</p>
+                  <ul className="text-gray-600 space-y-1">
+                    <li>• Timur: Tajur Halang</li>
+                    <li>• Barat: Desa Sukamantri</li>
+                    <li>• Selatan: Gn. Salak</li>
+                    <li>• Utara: Kel. Mulyaharja</li>
+                  </ul>
+                </div>
+              </div>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 Desa di bagian barat Kecamatan Cijeruk, Kabupaten Bogor ini memiliki potensi agrikultur besar dengan luas 531,56 hektare dan penduduk sekitar 14.863 jiwa, mayoritas petani dan buruh tani.
               </p>
