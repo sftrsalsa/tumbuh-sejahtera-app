@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -78,26 +79,33 @@ const Index = () => {
 
   const featuredProducts = [
     {
-      name: 'Nanas Madu Premium',
-      price: 'Rp 35.000/kg',
+      name: 'Nanas',
+      description: 'Buah nanas segar dengan rasa manis yang khas',
       image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop',
       rating: 4.8,
-      stock: 50
+      category: 'Buah'
     },
     {
-      name: 'Talas Bogor Segar',
-      price: 'Rp 15.000/kg',
+      name: 'Talas',
+      description: 'Talas berkualitas tinggi untuk berbagai kebutuhan kuliner',
       image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=400&h=300&fit=crop',
       rating: 4.6,
-      stock: 30
+      category: 'Umbi'
     },
     {
-      name: 'Tanaman Hias Anthurium',
-      price: 'Rp 125.000/pot',
+      name: 'Tanaman Hias',
+      description: 'Koleksi tanaman hias indah untuk mempercantik rumah',
       image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop',
       rating: 4.9,
-      stock: 15
+      category: 'Hias'
     }
+  ];
+
+  const navigationItems = [
+    { name: 'Katalog Produk', id: 'catalog' },
+    { name: 'Komoditas Unggulan', id: 'featured' },
+    { name: 'Kemitraan Belanja', id: 'partnership' },
+    { name: 'Konten Edukatif', id: 'education' }
   ];
 
   const handleFeatureClick = (featureId: string) => {
@@ -108,10 +116,11 @@ const Index = () => {
     });
   };
 
-  const handleAddToCart = (productName: string) => {
+  const handleNavClick = (itemId: string) => {
+    setActiveSection(itemId);
     toast({
-      title: "Ditambahkan ke Keranjang",
-      description: `${productName} berhasil ditambahkan ke keranjang belanja`,
+      title: "Navigasi",
+      description: `Menampilkan ${navigationItems.find(n => n.id === itemId)?.name}`,
     });
   };
 
@@ -126,18 +135,19 @@ const Index = () => {
                 <Store className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-green-800">AgroVillage</h1>
-                <p className="text-green-600 text-sm">Platform Agrikultur Terpadu</p>
+                <h1 className="text-2xl font-bold text-green-800">Suka Belanja di Harja</h1>
+                <p className="text-green-600 text-sm">Desa Sukaharja Digital Panen Produk Klik Sekejap</p>
               </div>
             </div>
             <nav className="hidden md:flex space-x-6">
-              {['Home', 'Produk', 'Tentang', 'Kontak'].map((item) => (
+              {navigationItems.map((item) => (
                 <Button
-                  key={item}
+                  key={item.id}
                   variant="ghost"
                   className="text-green-700 hover:text-green-900 hover:bg-green-100"
+                  onClick={() => handleNavClick(item.id)}
                 >
-                  {item}
+                  {item.name}
                 </Button>
               ))}
             </nav>
@@ -145,47 +155,97 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-green-700 via-green-600 to-green-500 text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+      {/* Hero Section with Village Background */}
+      <section 
+        className="relative bg-gradient-to-r from-green-700/90 via-green-600/90 to-green-500/90 text-white py-20"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1200&h=600&fit=crop")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'overlay'
+        }}
+      >
+        <div className="absolute inset-0 bg-green-800/60"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-5xl font-bold mb-6 leading-tight">
-              Produk Agrikultur Berkualitas
-              <span className="block text-yellow-300">Langsung dari Desa</span>
+              DESA SUKAHARJA
+              <span className="block text-yellow-300 text-3xl mt-2">DIGITAL PANEN PRODUK KLIK SEKEJAP</span>
             </h2>
-            <p className="text-xl mb-8 text-green-100">
-              Temukan beragam produk pertanian segar dan berkualitas tinggi 
-              dari petani lokal terpercaya. Dari nanas madu hingga tanaman hias premium.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Button 
                 size="lg" 
                 className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3"
                 onClick={() => setActiveSection('catalog')}
               >
-                Jelajahi Produk
+                Katalog Produk
               </Button>
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-green-700 px-8 py-3"
-                onClick={() => setActiveSection('village')}
+                className="bg-green-600 hover:bg-green-700 text-white px-8 py-3"
+                onClick={() => setActiveSection('featured')}
               >
-                Tentang Desa
+                Komoditas Unggulan
+              </Button>
+              <Button 
+                size="lg" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
+                onClick={() => setActiveSection('partnership')}
+              >
+                Kemitraan Belanja
+              </Button>
+              <Button 
+                size="lg" 
+                className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3"
+                onClick={() => setActiveSection('education')}
+              >
+                Konten Edukatif
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* Village Information Section */}
       <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-green-800 mb-4">Mengenal Desa Kami</h3>
+            <p className="text-green-600 max-w-2xl mx-auto">
+              Desa Sukaharja adalah desa yang kaya akan hasil pertanian dan berkomitmen pada digitalisasi untuk kemudahan akses produk berkualitas
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <img 
+                src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&h=400&fit=crop" 
+                alt="Desa Sukaharja"
+                className="w-full h-64 object-cover rounded-lg shadow-lg"
+              />
+            </div>
+            <div>
+              <h4 className="text-2xl font-bold text-green-800 mb-4">Visi & Misi Desa</h4>
+              <p className="text-gray-700 mb-4">
+                Menjadi desa yang mandiri dan modern dengan memanfaatkan teknologi digital untuk memasarkan hasil pertanian lokal secara luas.
+              </p>
+              <Button 
+                className="bg-green-600 hover:bg-green-700"
+                onClick={() => setActiveSection('village')}
+              >
+                Pelajari Lebih Lanjut
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Products - Komoditas Unggulan */}
+      <section className="py-16 bg-gradient-to-br from-green-50 to-green-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-green-800 mb-4">Komoditas Unggulan</h3>
             <p className="text-green-600 max-w-2xl mx-auto">
-              Produk terbaik kami yang telah dipercaya oleh ribuan pelanggan di seluruh Indonesia
+              Produk terbaik dari Desa Sukaharja yang telah dipercaya oleh pelanggan
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -198,26 +258,24 @@ const Index = () => {
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <Badge className="absolute top-3 right-3 bg-green-600">
-                    Stok: {product.stock}
+                    {product.category}
                   </Badge>
                 </div>
                 <CardContent className="p-6">
                   <h4 className="font-bold text-lg text-green-800 mb-2">{product.name}</h4>
+                  <p className="text-gray-600 text-sm mb-3">{product.description}</p>
                   <div className="flex items-center mb-3">
                     <Star className="h-4 w-4 text-yellow-500 fill-current" />
                     <span className="ml-1 text-sm text-gray-600">{product.rating}</span>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xl font-bold text-green-600">{product.price}</span>
-                    <Button 
-                      size="sm"
-                      className="bg-green-600 hover:bg-green-700"
-                      onClick={() => handleAddToCart(product.name)}
-                    >
-                      <ShoppingCart className="h-4 w-4 mr-1" />
-                      Beli
-                    </Button>
-                  </div>
+                  <Button 
+                    size="sm"
+                    className="w-full bg-green-600 hover:bg-green-700"
+                    onClick={() => handleFeatureClick('catalog')}
+                  >
+                    <ShoppingCart className="h-4 w-4 mr-1" />
+                    Lihat Detail
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -225,38 +283,71 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="py-16 bg-gradient-to-br from-green-50 to-green-100">
+      {/* Gallery Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-green-800 mb-4">Fitur Platform</h3>
+            <h3 className="text-3xl font-bold text-green-800 mb-4">Galeri Desa</h3>
             <p className="text-green-600 max-w-2xl mx-auto">
-              Semua yang Anda butuhkan untuk berbelanja produk agrikultur dalam satu platform
+              Dokumentasi kegiatan dan potensi Desa Sukaharja
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature) => {
-              const IconComponent = feature.icon;
-              return (
-                <Card 
-                  key={feature.id}
-                  className="group cursor-pointer hover:shadow-xl transition-all duration-300 border-0 shadow-md hover:-translate-y-1"
-                  onClick={() => handleFeatureClick(feature.id)}
-                >
-                  <CardHeader className="text-center">
-                    <div className={`${feature.color} p-4 rounded-full w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <IconComponent className="h-8 w-8 text-white" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              'https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?w=400&h=300&fit=crop',
+              'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=300&fit=crop',
+              'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&h=300&fit=crop'
+            ].map((image, index) => (
+              <div key={index} className="relative overflow-hidden rounded-lg shadow-lg group">
+                <img 
+                  src={image} 
+                  alt={`Galeri ${index + 1}`}
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-green-800/0 group-hover:bg-green-800/30 transition-all duration-300"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Product Quality Section */}
+      <section className="py-16 bg-yellow-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <Card className="shadow-xl border-0">
+              <CardContent className="p-8">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold text-green-800 mb-4">Produk Asli Desa, Kualitas Istimewa</h3>
+                    <p className="text-gray-700 mb-4">
+                      Semua produk kami berasal langsung dari petani lokal Desa Sukaharja dengan kualitas terjamin dan harga yang bersahabat.
+                    </p>
+                    <div className="space-y-2">
+                      <div className="flex items-center">
+                        <Star className="h-5 w-5 text-yellow-500 mr-2" />
+                        <span className="text-gray-700">Kualitas terjamin</span>
+                      </div>
+                      <div className="flex items-center">
+                        <ShoppingCart className="h-5 w-5 text-green-600 mr-2" />
+                        <span className="text-gray-700">Harga langsung dari petani</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Map className="h-5 w-5 text-blue-600 mr-2" />
+                        <span className="text-gray-700">Pengiriman ke seluruh Indonesia</span>
+                      </div>
                     </div>
-                    <CardTitle className="text-green-800 text-lg">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-center text-gray-600 leading-relaxed">
-                      {feature.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              );
-            })}
+                  </div>
+                  <div>
+                    <img 
+                      src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=500&h=400&fit=crop" 
+                      alt="Produk Berkualitas"
+                      className="w-full h-64 object-cover rounded-lg shadow-lg"
+                    />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -268,12 +359,14 @@ const Index = () => {
             <Card className="max-w-4xl mx-auto shadow-xl border-0">
               <CardHeader className="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-t-lg">
                 <CardTitle className="text-2xl text-center">
-                  {features.find(f => f.id === activeSection)?.title}
+                  {features.find(f => f.id === activeSection)?.title || 
+                   navigationItems.find(n => n.id === activeSection)?.name}
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-8">
                 <p className="text-lg text-gray-700 text-center leading-relaxed">
-                  {features.find(f => f.id === activeSection)?.content}
+                  {features.find(f => f.id === activeSection)?.content || 
+                   "Konten untuk bagian ini sedang dalam pengembangan."}
                 </p>
                 <div className="mt-6 text-center">
                   <Button 
@@ -290,42 +383,21 @@ const Index = () => {
         </section>
       )}
 
-      {/* Statistics */}
-      <section className="py-16 bg-green-700 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            {[
-              { number: '500+', label: 'Produk Tersedia' },
-              { number: '2000+', label: 'Pelanggan Puas' },
-              { number: '50+', label: 'Petani Mitra' },
-              { number: '24/7', label: 'Customer Service' }
-            ].map((stat, index) => (
-              <div key={index} className="group">
-                <div className="text-4xl font-bold text-yellow-300 mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {stat.number}
-                </div>
-                <div className="text-green-100">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="bg-green-800 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h4 className="font-bold text-lg mb-4">AgroVillage</h4>
-              <p className="text-green-200">Platform agrikultur terpadu yang menghubungkan petani dengan konsumen.</p>
+              <h4 className="font-bold text-lg mb-4">Suka Belanja di Harja</h4>
+              <p className="text-green-200">Platform digital Desa Sukaharja untuk memasarkan produk lokal berkualitas.</p>
             </div>
             <div>
               <h4 className="font-bold text-lg mb-4">Produk</h4>
               <ul className="space-y-2 text-green-200">
-                <li>Buah-buahan</li>
-                <li>Sayuran</li>
+                <li>Nanas</li>
+                <li>Talas</li>
                 <li>Tanaman Hias</li>
-                <li>Bumbu Dapur</li>
+                <li>Produk Lokal Lainnya</li>
               </ul>
             </div>
             <div>
@@ -333,22 +405,22 @@ const Index = () => {
               <ul className="space-y-2 text-green-200">
                 <li>Pengiriman</li>
                 <li>Konsultasi</li>
-                <li>Pelatihan</li>
                 <li>Kemitraan</li>
+                <li>Edukasi</li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold text-lg mb-4">Kontak</h4>
               <ul className="space-y-2 text-green-200">
-                <li>info@agrovillage.com</li>
+                <li>info@sukabelanjadharja.com</li>
                 <li>+62 812-3456-7890</li>
-                <li>Jl. Pertanian No. 123</li>
-                <li>Desa Makmur, Indonesia</li>
+                <li>Desa Sukaharja</li>
+                <li>Kabupaten Sukabumi</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-green-700 mt-8 pt-8 text-center text-green-200">
-            <p>&copy; 2024 AgroVillage. Semua hak cipta dilindungi.</p>
+            <p>&copy; 2024 Suka Belanja di Harja - Desa Sukaharja. Semua hak cipta dilindungi.</p>
           </div>
         </div>
       </footer>
