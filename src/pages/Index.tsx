@@ -1,9 +1,8 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Cart, Book, Chat, Map, Pencil, Gallery, Store } from 'lucide-react';
+import { Star, ShoppingCart, Book, MessageCircle, Map, Pencil, Images, Store } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
@@ -31,7 +30,7 @@ const Index = () => {
       id: 'chat',
       title: 'Live Chat/Customer Service',
       description: 'Sebagai akses komunikasi dengan admin mengenai stok produk, cara pemesanan atau informasi yang dibutuhkan secara real time',
-      icon: Chat,
+      icon: MessageCircle,
       color: 'bg-green-600',
       content: 'Hubungi tim customer service kami untuk bantuan langsung.'
     },
@@ -47,7 +46,7 @@ const Index = () => {
       id: 'cart',
       title: 'Keranjang Belanja',
       description: 'Fitur untuk menampung produk yang akan dibeli',
-      icon: Cart,
+      icon: ShoppingCart,
       color: 'bg-green-600',
       content: 'Kelola pembelian Anda dengan mudah melalui keranjang belanja.'
     },
@@ -71,7 +70,7 @@ const Index = () => {
       id: 'gallery',
       title: 'Galeri Desa',
       description: 'Bagian yang menampilkan wadah visual untuk dokumentasi kegiatan serta potensi desa',
-      icon: Gallery,
+      icon: Images,
       color: 'bg-yellow-500',
       content: 'Lihat dokumentasi visual kegiatan dan potensi desa kami.'
     }
@@ -215,7 +214,7 @@ const Index = () => {
                       className="bg-green-600 hover:bg-green-700"
                       onClick={() => handleAddToCart(product.name)}
                     >
-                      <Cart className="h-4 w-4 mr-1" />
+                      <ShoppingCart className="h-4 w-4 mr-1" />
                       Beli
                     </Button>
                   </div>
