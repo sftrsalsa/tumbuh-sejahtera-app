@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -220,7 +219,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/08e1c42c-5af2-4903-91ec-d1a9249deba8.png" 
                 alt="Peta Desa Sukaharja"
-                className="w-full h-64 object-cover rounded-lg shadow-lg"
+                className="w-full h-auto object-contain rounded-lg shadow-lg bg-white"
               />
             </div>
             <div>
