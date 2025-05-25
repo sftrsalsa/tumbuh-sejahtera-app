@@ -325,17 +325,49 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              'https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?w=400&h=300&fit=crop',
-              'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=300&fit=crop',
-              'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&h=300&fit=crop'
-            ].map((image, index) => (
+              {
+                image: '/lovable-uploads/5156a629-12f0-43f1-a5ae-0d4b48acdfed.png',
+                title: 'Lahan Pertanian Desa'
+              },
+              {
+                image: '/lovable-uploads/eb20acab-a584-4931-b44f-936e74a28cf0.png',
+                title: 'Kegiatan Masyarakat Petani'
+              },
+              {
+                image: '/lovable-uploads/b8d2da31-06d1-4072-8b55-616be68b716b.png',
+                title: 'Diskusi Warga Desa'
+              },
+              {
+                image: '/lovable-uploads/72c90817-7ea1-4677-a40f-66265cea474c.png',
+                title: 'Perkebunan Talas'
+              },
+              {
+                image: '/lovable-uploads/c62d382b-9962-490e-a225-3a092ca53b0b.png',
+                title: 'Lahan Nanas'
+              },
+              {
+                image: '/lovable-uploads/9cdce8d7-fc10-4455-9822-c33b8810e7e4.png',
+                title: 'Tanaman Hias'
+              },
+              {
+                image: '/lovable-uploads/7114d40d-41ab-4eb7-98a7-2649ce9ed625.png',
+                title: 'Panen Talas'
+              },
+              {
+                image: '/lovable-uploads/0256bbdc-e72c-460f-91ef-e15c217aad1e.png',
+                title: 'Pusat Pembelajaran Pertanian'
+              }
+            ].map((item, index) => (
               <div key={index} className="relative overflow-hidden rounded-lg shadow-lg group">
                 <img 
-                  src={image} 
-                  alt={`Galeri ${index + 1}`}
+                  src={item.image} 
+                  alt={item.title}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-green-800/0 group-hover:bg-green-800/30 transition-all duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                  <h4 className="text-white font-semibold text-sm">{item.title}</h4>
+                </div>
               </div>
             ))}
           </div>
