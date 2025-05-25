@@ -78,25 +78,58 @@ const Index = () => {
 
   const featuredProducts = [
     {
-      name: 'Nanas',
-      description: 'Buah nanas segar dengan rasa manis yang khas',
+      name: 'Nanas Gati Sukaharja',
+      description: 'Nanas Gati adalah varietas nanas lokal Bogor yang terkenal dengan rasa manis segar dan sedikit asam. Daging buahnya renyah, berair, dan memiliki aroma khas yang menggugah selera.',
       image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop',
       rating: 4.8,
-      category: 'Buah'
+      category: 'Buah',
+      keunggulan: [
+        'Dibudidayakan secara tradisional dengan perawatan optimal',
+        'Ukuran buah sedang dengan mata yang tidak terlalu dalam',
+        'Tahan lama dan cocok untuk jus, rujak, atau selai'
+      ],
+      manfaat: [
+        'Kaya vitamin C untuk daya tahan tubuh',
+        'Mengandung bromelain yang baik untuk pencernaan',
+        'Antioksidan alami untuk kesehatan kulit'
+      ],
+      harga: 'Rp10.000–Rp20.000/buah (tergantung ukuran)'
     },
     {
-      name: 'Talas',
-      description: 'Talas berkualitas tinggi untuk berbagai kebutuhan kuliner',
+      name: 'Talas Khas Sukaharja',
+      description: 'Talas dari Desa Sukaharja dikenal sebagai salah satu komoditas unggulan dengan tekstur lembut dan rasa gurih alami. Talas ini cocok untuk diolah menjadi berbagai makanan tradisional seperti kolak, keripik, atau dodol talas.',
       image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=400&h=300&fit=crop',
       rating: 4.6,
-      category: 'Umbi'
+      category: 'Umbi',
+      keunggulan: [
+        'Ditanam secara organik dengan pupuk alami',
+        'Umbi besar dan berkualitas tinggi',
+        'Cocok untuk usaha kuliner atau dikonsumsi langsung'
+      ],
+      manfaat: [
+        'Sumber karbohidrat sehat',
+        'Mengandung serat tinggi untuk pencernaan',
+        'Rendah kalori, baik untuk diet'
+      ],
+      harga: 'Rp15.000–Rp25.000/kg (tergantung musim dan ukuran)'
     },
     {
-      name: 'Tanaman Hias',
-      description: 'Koleksi tanaman hias indah untuk mempercantik rumah',
+      name: 'Tanaman Hias Sukaharja',
+      description: 'Desa Sukaharja menyediakan beragam tanaman hias berkualitas untuk mempercantik rumah, taman, atau ruang kerja.',
       image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop',
       rating: 4.9,
-      category: 'Hias'
+      category: 'Hias',
+      keunggulan: [
+        'Ditanam oleh petani lokal dengan perawatan optimal',
+        'Harga terjangkau, kualitas terjamin',
+        'Cocok untuk dekorasi rumah, hadiah, atau bisnis landscaping'
+      ],
+      jenis: {
+        daun: ['Aglaonema (Sri Rejeki)', 'Lidah Mertua (Sansevieria)', 'Calathea', 'Monstera', 'Philodendron', 'Kuping Gajah (Anthurium)'],
+        bunga: ['Anggrek Bulan', 'Kamboja Jepang (Adenium)', 'Bunga Krokot (Portulaca)', 'Bunga Peace Lily (Spathiphyllum)', 'Bunga Euphorbia'],
+        gantung: ['Sirih Gading', 'Lidah Buaya Hias (Aloe Vera)', 'Pakis Hias', 'Bunga Lipstik (Aeschynanthus)']
+      },
+      harga: 'Mulai dari Rp15.000 (tanaman kecil) hingga Rp500.000 (tanaman besar/langka)'
     }
   ];
 
@@ -292,13 +325,64 @@ const Index = () => {
                     {product.category}
                   </Badge>
                 </div>
-                <CardContent className="p-6">
-                  <h4 className="font-bold text-lg text-green-800 mb-2">{product.name}</h4>
-                  <p className="text-gray-600 text-sm mb-3">{product.description}</p>
-                  <div className="flex items-center mb-3">
-                    <Star className="h-4 w-4 text-yellow-500 fill-current" />
-                    <span className="ml-1 text-sm text-gray-600">{product.rating}</span>
+                <CardContent className="p-6 space-y-4">
+                  <div>
+                    <h4 className="font-bold text-lg text-green-800 mb-2">{product.name}</h4>
+                    <p className="text-gray-600 text-sm mb-3">{product.description}</p>
+                    <div className="flex items-center mb-3">
+                      <Star className="h-4 w-4 text-yellow-500 fill-current" />
+                      <span className="ml-1 text-sm text-gray-600">{product.rating}</span>
+                    </div>
                   </div>
+                  
+                  {product.keunggulan && (
+                    <div>
+                      <h5 className="font-semibold text-green-700 mb-2">Keunggulan:</h5>
+                      <ul className="text-xs text-gray-600 space-y-1">
+                        {product.keunggulan.map((item, idx) => (
+                          <li key={idx}>• {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {product.manfaat && (
+                    <div>
+                      <h5 className="font-semibold text-green-700 mb-2">Manfaat:</h5>
+                      <ul className="text-xs text-gray-600 space-y-1">
+                        {product.manfaat.map((item, idx) => (
+                          <li key={idx}>• {item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {product.jenis && (
+                    <div>
+                      <h5 className="font-semibold text-green-700 mb-2">Jenis Tersedia:</h5>
+                      <div className="space-y-2 text-xs text-gray-600">
+                        <div>
+                          <strong>Tanaman Hias Daun:</strong>
+                          <p>{product.jenis.daun.join(', ')}</p>
+                        </div>
+                        <div>
+                          <strong>Tanaman Hias Bunga:</strong>
+                          <p>{product.jenis.bunga.join(', ')}</p>
+                        </div>
+                        <div>
+                          <strong>Tanaman Gantung & Outdoor:</strong>
+                          <p>{product.jenis.gantung.join(', ')}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className="bg-yellow-50 p-3 rounded-lg">
+                    <p className="text-sm font-semibold text-green-800">
+                      Harga: {product.harga}
+                    </p>
+                  </div>
+                  
                   <Button 
                     size="sm"
                     className="w-full bg-green-600 hover:bg-green-700"
