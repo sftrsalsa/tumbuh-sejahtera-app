@@ -218,7 +218,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="/lovable-uploads/dcc5ef76-3da3-4e64-aa52-92e61dcf337f.png" 
+                src="/lovable-uploads/08e1c42c-5af2-4903-91ec-d1a9249deba8.png" 
                 alt="Peta Desa Sukaharja"
                 className="w-full h-64 object-cover rounded-lg shadow-lg"
               />
