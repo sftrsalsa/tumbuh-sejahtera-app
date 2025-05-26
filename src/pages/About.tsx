@@ -9,37 +9,37 @@ const About = () => {
     {
       name: 'Mohamad Damar Purnama',
       role: 'Founder & CEO',
-      image: '/lovable-uploads/eb20acab-a584-4931-b44f-936e74a28cf0.png',
+      image: 'public/lovable-uploads/DSC00321.JPG,
       description: 'Memimpin pengembangan website dan koordinasi tim untuk kemajuan desa'
     },
     {
       name: 'Salsa Nabila Safitri',
       role: 'Chief Technology Officer',
-      image: '/lovable-uploads/b8d2da31-06d1-4072-8b55-616be68b716b.png',
+      image: 'public/lovable-uploads/Gambar WhatsApp 2025-05-26 pukul 12.08.17_ca6919d8.jpg',
       description: 'Bertanggung jawab atas desain dan pengembangan antarmuka website'
     },
     {
       name: 'Zahara Aini Kusuma',
       role: 'Content Creator & DocumentationHead Of Agriculture',
-      image: '/lovable-uploads/0256bbdc-e72c-460f-91ef-e15c217aad1e.png',
+      image: 'public/lovable-uploads/IMG-20250320-WA0022.jpg',
       description: 'Mengelola konten edukatif dan dokumentasi kegiatan desa'
     },
     {
       name: 'Hilmia Salsabila',
       role: 'Marketing & Partnership',
-      image: '/lovable-uploads/5156a629-12f0-43f1-a5ae-0d4b48acdfed.png',
+      image: 'public/lovable-uploads/IMG_7561.JPG',
       description: 'Mengembangkan strategi pemasaran dan kemitraan untuk produk desa'
     },
     {
       name: 'Nadya Tendra Sikki',
       role: 'Technical Support & Maintenance',
-      image: '/lovable-uploads/72c90817-7ea1-4677-a40f-66265cea474c.png',
+      image: 'public/lovable-uploads/IMG_20210516_153733.jpg',
       description: 'Memastikan website berjalan lancar dan memberikan dukungan teknis'
     },
     {
       name: 'Muhammad Azhar Ahzami',
       role: 'Community Manager & Research',
-      image: '/lovable-uploads/7114d40d-41ab-4eb7-98a7-2649ce9ed625.png',
+      image: '',
       description: 'Mengelola komunitas online dan penelitian kebutuhan masyarakat'
     }
   ];
