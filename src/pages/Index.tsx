@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -541,28 +542,112 @@ const Index = () => {
             <div>
               <h4 className="font-bold text-lg mb-4">Produk</h4>
               <ul className="space-y-2 text-green-200">
-                <li>Nanas</li>
-                <li>Talas</li>
-                <li>Tanaman Hias</li>
-                <li>Produk Lokal Lainnya</li>
+                <li>
+                  <button 
+                    onClick={() => handleFeatureClick('featured')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Nanas
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleFeatureClick('featured')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Talas
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleFeatureClick('featured')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Tanaman Hias
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleFeatureClick('catalog')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Produk Lokal Lainnya
+                  </button>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold text-lg mb-4">Layanan</h4>
               <ul className="space-y-2 text-green-200">
-                <li>Pengiriman</li>
-                <li>Konsultasi</li>
-                <li>Kemitraan</li>
-                <li>Edukasi</li>
+                <li>
+                  <button 
+                    onClick={() => handleFeatureClick('cart')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Pengiriman
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleFeatureClick('chat')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Konsultasi
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setActiveSection('partnership')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Kemitraan
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleFeatureClick('education')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Edukasi
+                  </button>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold text-lg mb-4">Kontak</h4>
               <ul className="space-y-2 text-green-200">
-                <li>info@sukabelanjadharja.com</li>
-                <li>+62 812-3456-7890</li>
-                <li>Desa Sukaharja</li>
-                <li>Kabupaten Sukabumi</li>
+                <li>
+                  <button 
+                    onClick={() => handleFeatureClick('chat')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    info@sukabelanjadharja.com
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleFeatureClick('chat')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    +62 812-3456-7890
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleFeatureClick('village')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Desa Sukaharja
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => handleFeatureClick('village')}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Kabupaten Sukabumi
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
