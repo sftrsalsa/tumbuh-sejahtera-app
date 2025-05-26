@@ -4,9 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, BookOpen, Video, FileText, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useToast } from "@/hooks/use-toast";
+import { useState } from 'react';
 
 const Education = () => {
   const { toast } = useToast();
+  const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const educationalContent = [
     {
@@ -16,6 +18,7 @@ const Education = () => {
       image: '/lovable-uploads/c62d382b-9962-490e-a225-3a092ca53b0b.png',
       duration: '10 menit baca',
       icon: FileText,
+      category: 'artikel',
       content: `
         Nanas Gati merupakan varietas unggul yang mudah dibudidayakan. Berikut langkah-langkahnya:
         
@@ -46,6 +49,7 @@ const Education = () => {
       image: '/lovable-uploads/72c90817-7ea1-4677-a40f-66265cea474c.png',
       duration: '15 menit',
       icon: Video,
+      category: 'video',
       content: `
         Budidaya talas organik semakin diminati karena ramah lingkungan:
         
@@ -73,6 +77,7 @@ const Education = () => {
       image: '/lovable-uploads/9cdce8d7-fc10-4455-9822-c33b8810e7e4.png',
       duration: '8 menit baca',
       icon: BookOpen,
+      category: 'panduan',
       content: `
         Tanaman hias indoor membutuhkan perawatan khusus:
         
@@ -104,6 +109,7 @@ const Education = () => {
       image: '/lovable-uploads/5156a629-12f0-43f1-a5ae-0d4b48acdfed.png',
       duration: '45 menit',
       icon: Users,
+      category: 'webinar',
       content: `
         Teknologi modern mengubah wajah pertanian:
         
@@ -130,10 +136,30 @@ const Education = () => {
     }
   ];
 
+  const categories = [
+    { key: 'all', label: 'Semua', icon: FileText, color: 'bg-gray-600 hover:bg-gray-700' },
+    { key: 'artikel', label: 'Artikel', icon: FileText, color: 'bg-blue-600 hover:bg-blue-700' },
+    { key: 'video', label: 'Video', icon: Video, color: 'bg-red-600 hover:bg-red-700' },
+    { key: 'panduan', label: 'Panduan', icon: BookOpen, color: 'bg-yellow-600 hover:bg-yellow-700' },
+    { key: 'webinar', label: 'Webinar', icon: Users, color: 'bg-purple-600 hover:bg-purple-700' }
+  ];
+
+  const filteredContent = activeFilter === 'all' 
+    ? educationalContent 
+    : educationalContent.filter(content => content.category === activeFilter);
+
   const handleContentClick = (title: string) => {
     toast({
       title: "Konten Dibuka",
       description: `Membuka konten: ${title}`,
+    });
+  };
+
+  const handleFilterClick = (category: string) => {
+    setActiveFilter(category);
+    toast({
+      title: "Filter Diubah",
+      description: `Menampilkan konten: ${categories.find(c => c.key === category)?.label}`,
     });
   };
 
@@ -162,28 +188,24 @@ const Education = () => {
         </div>
 
         {/* Content Categories */}
-        <div className="grid md:grid-cols-4 gap-4 mb-8">
-          <Button className="bg-blue-600 hover:bg-blue-700 p-4 h-auto flex flex-col">
-            <FileText className="h-6 w-6 mb-2" />
-            <span>Artikel</span>
-          </Button>
-          <Button className="bg-red-600 hover:bg-red-700 p-4 h-auto flex flex-col">
-            <Video className="h-6 w-6 mb-2" />
-            <span>Video</span>
-          </Button>
-          <Button className="bg-yellow-600 hover:bg-yellow-700 p-4 h-auto flex flex-col">
-            <BookOpen className="h-6 w-6 mb-2" />
-            <span>Panduan</span>
-          </Button>
-          <Button className="bg-purple-600 hover:bg-purple-700 p-4 h-auto flex flex-col">
-            <Users className="h-6 w-6 mb-2" />
-            <span>Webinar</span>
-          </Button>
+        <div className="grid md:grid-cols-5 gap-4 mb-8">
+          {categories.map((category) => (
+            <Button 
+              key={category.key}
+              className={`${category.color} p-4 h-auto flex flex-col ${
+                activeFilter === category.key ? 'ring-4 ring-green-300' : ''
+              }`}
+              onClick={() => handleFilterClick(category.key)}
+            >
+              <category.icon className="h-6 w-6 mb-2" />
+              <span>{category.label}</span>
+            </Button>
+          ))}
         </div>
 
         {/* Educational Content */}
         <div className="grid md:grid-cols-2 gap-6 mb-8">
-          {educationalContent.map((content, index) => (
+          {filteredContent.map((content, index) => (
             <Card key={index} className="hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img 

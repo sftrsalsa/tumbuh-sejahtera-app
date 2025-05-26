@@ -14,6 +14,7 @@ import Village from "./pages/Village";
 import LiveChat from "./pages/LiveChat";
 import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/chat" element={<LiveChat />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<About />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
