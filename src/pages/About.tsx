@@ -1,10 +1,9 @@
-
+import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Users, Target, Eye, Award } from 'lucide-react';
-import { Link } from 'react-router-dom';
-
-const About = () => {
+import { Link } from "react-router-dom";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Leaf, MessageSquare, ArrowRight } from "lucide-react";
+const About = () => {
   const teamMembers = [
     {
       name: 'Mohamad Damar Purnama',
