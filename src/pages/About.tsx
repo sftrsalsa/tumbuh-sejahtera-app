@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom';
 const About = () => {
   const teamMembers = [
     {
-      name: 'Ahmad Sutrisno',
+      name: 'Salsa Nabila Safitri',
       role: 'Kepala Desa & Project Leader',
       image: '/lovable-uploads/eb20acab-a584-4931-b44f-936e74a28cf0.png',
       description: 'Memimpin pengembangan website dan koordinasi tim untuk kemajuan desa'
     },
     {
-      name: 'Siti Rahayu',
+      name: 'AWEU',
       role: 'Developer & UI/UX Designer',
       image: '/lovable-uploads/b8d2da31-06d1-4072-8b55-616be68b716b.png',
       description: 'Bertanggung jawab atas desain dan pengembangan antarmuka website'
