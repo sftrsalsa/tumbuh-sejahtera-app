@@ -1,38 +1,39 @@
-import Layout from "@/components/layout/Layout";
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Leaf, MessageSquare, ArrowRight } from "lucide-react";
-const About = () => {
+import { ArrowLeft, Target, Eye } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+
+const About = () => {
   const teamMembers = [
     {
       name: 'Mohamad Damar Purnama',
       role: 'Founder & CEO',
-      image: '/lovable-uploads/DSC00321.JPG,
+      image: '/lovable-uploads/4cce6647-837c-4894-8faf-d111a8e1bac7.png',
       description: 'Memimpin pengembangan website dan koordinasi tim untuk kemajuan desa'
     },
     {
       name: 'Salsa Nabila Safitri',
       role: 'Chief Technology Officer',
-      image: '/lovable-uploads/Gambar WhatsApp 2025-05-26 pukul 12.08.17_ca6919d8.jpg',
+      image: '/lovable-uploads/26dc007b-c1dd-44dc-822d-6ba64efd5f5d.png',
       description: 'Bertanggung jawab atas desain dan pengembangan antarmuka website'
     },
     {
       name: 'Zahara Aini Kusuma',
-      role: 'Content Creator & DocumentationHead Of Agriculture',
-      image: '/lovable-uploads/IMG-20250320-WA0022.jpg',
+      role: 'Content Creator & Documentation Head Of Agriculture',
+      image: '/lovable-uploads/d7b1b8e5-c288-4b91-8c01-ac1da18c97c5.png',
       description: 'Mengelola konten edukatif dan dokumentasi kegiatan desa'
     },
     {
       name: 'Hilmia Salsabila',
       role: 'Marketing & Partnership',
-      image: '/lovable-uploads/IMG_7561.JPG',
+      image: '/lovable-uploads/18969d5a-e64f-42d8-b3e9-50b88269149e.png',
       description: 'Mengembangkan strategi pemasaran dan kemitraan untuk produk desa'
     },
     {
       name: 'Nadya Tendra Sikki',
       role: 'Technical Support & Maintenance',
-      image: '/lovable-uploads/IMG_20210516_153733.jpg',
+      image: '/lovable-uploads/9ad24447-4f16-4162-9885-fdb43dfeeee1.png',
       description: 'Memastikan website berjalan lancar dan memberikan dukungan teknis'
     },
     {
@@ -131,11 +132,17 @@ const About = () => {
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-6 text-center">
                   <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
+                    {member.image ? (
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                        <span className="text-gray-500 text-xs">Foto belum tersedia</span>
+                      </div>
+                    )}
                   </div>
                   <h4 className="font-bold text-lg text-green-800 mb-2">{member.name}</h4>
                   <p className="text-green-600 font-semibold mb-3">{member.role}</p>
