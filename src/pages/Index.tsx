@@ -142,19 +142,46 @@ const Index = () => {
   ];
 
   const handleFeatureClick = (featureId: string) => {
-    setActiveSection(featureId);
-    toast({
-      title: "Fitur Aktif",
-      description: `Menampilkan ${features.find(f => f.id === featureId)?.title}`,
-    });
+    // Navigate to appropriate page based on feature
+    const routeMap: { [key: string]: string } = {
+      'catalog': '/catalog',
+      'featured': '/featured',
+      'chat': '/chat',
+      'village': '/village',
+      'cart': '/catalog',
+      'education': '/education',
+      'blog': '/blog',
+      'gallery': '/gallery'
+    };
+    
+    if (routeMap[featureId]) {
+      window.location.href = routeMap[featureId];
+    } else {
+      setActiveSection(featureId);
+      toast({
+        title: "Fitur Aktif",
+        description: `Menampilkan ${features.find(f => f.id === featureId)?.title}`,
+      });
+    }
   };
 
   const handleNavClick = (itemId: string) => {
-    setActiveSection(itemId);
-    toast({
-      title: "Navigasi",
-      description: `Menampilkan ${navigationItems.find(n => n.id === itemId)?.name}`,
-    });
+    const routeMap: { [key: string]: string } = {
+      'catalog': '/catalog',
+      'featured': '/featured',
+      'partnership': '/partnership',
+      'education': '/education'
+    };
+    
+    if (routeMap[itemId]) {
+      window.location.href = routeMap[itemId];
+    } else {
+      setActiveSection(itemId);
+      toast({
+        title: "Navigasi",
+        description: `Menampilkan ${navigationItems.find(n => n.id === itemId)?.name}`,
+      });
+    }
   };
 
   return (
@@ -209,28 +236,28 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3"
-                onClick={() => setActiveSection('catalog')}
+                onClick={() => handleNavClick('catalog')}
               >
                 Katalog Produk
               </Button>
               <Button 
                 size="lg" 
                 className="bg-green-600 hover:bg-green-700 text-white px-8 py-3"
-                onClick={() => setActiveSection('featured')}
+                onClick={() => handleNavClick('featured')}
               >
                 Komoditas Unggulan
               </Button>
               <Button 
                 size="lg" 
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
-                onClick={() => setActiveSection('partnership')}
+                onClick={() => handleNavClick('partnership')}
               >
                 Kemitraan Belanja
               </Button>
               <Button 
                 size="lg" 
                 className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3"
-                onClick={() => setActiveSection('education')}
+                onClick={() => handleNavClick('education')}
               >
                 Konten Edukatif
               </Button>
@@ -295,7 +322,7 @@ const Index = () => {
               </p>
               <Button 
                 className="bg-green-600 hover:bg-green-700"
-                onClick={() => setActiveSection('village')}
+                onClick={() => handleFeatureClick('village')}
               >
                 Pelajari Lebih Lanjut
               </Button>
@@ -597,7 +624,7 @@ const Index = () => {
                 </li>
                 <li>
                   <button 
-                    onClick={() => setActiveSection('partnership')}
+                    onClick={() => handleNavClick('partnership')}
                     className="hover:text-white transition-colors text-left"
                   >
                     Kemitraan
