@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -138,7 +137,8 @@ const Index = () => {
     { name: 'Katalog Produk', id: 'catalog' },
     { name: 'Komoditas Unggulan', id: 'featured' },
     { name: 'Kemitraan Belanja', id: 'partnership' },
-    { name: 'Konten Edukatif', id: 'education' }
+    { name: 'Konten Edukatif', id: 'education' },
+    { name: 'Tentang Kami', id: 'about' }
   ];
 
   const handleFeatureClick = (featureId: string) => {
@@ -170,7 +170,8 @@ const Index = () => {
       'catalog': '/catalog',
       'featured': '/featured',
       'partnership': '/partnership',
-      'education': '/education'
+      'education': '/education',
+      'about': '/about'
     };
     
     if (routeMap[itemId]) {
@@ -565,6 +566,14 @@ const Index = () => {
             <div>
               <h4 className="font-bold text-lg mb-4">Suka Belanja di Harja</h4>
               <p className="text-green-200">Platform digital Desa Sukaharja untuk memasarkan produk lokal berkualitas.</p>
+              <div className="mt-4">
+                <button 
+                  onClick={() => handleNavClick('about')}
+                  className="text-yellow-300 hover:text-white transition-colors text-left font-semibold"
+                >
+                  Tentang Kami
+                </button>
+              </div>
             </div>
             <div>
               <h4 className="font-bold text-lg mb-4">Produk</h4>
