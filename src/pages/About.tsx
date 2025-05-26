@@ -7,37 +7,37 @@ import { Link } from 'react-router-dom';
 const About = () => {
   const teamMembers = [
     {
-      name: 'Salsa Nabila Safitri',
-      role: 'CEO',
+      name: 'Mohammad Damar Purnama',
+      role: 'Founder & CEO',
       image: '/lovable-uploads/eb20acab-a584-4931-b44f-936e74a28cf0.png',
       description: 'Memimpin pengembangan website dan koordinasi tim untuk kemajuan desa'
     },
     {
-      name: 'AWEU',
-      role: 'Developer & UI/UX Designer',
+      name: 'Salsa Nabila Safitri',
+      role: 'Chief Technology Officer',
       image: '/lovable-uploads/b8d2da31-06d1-4072-8b55-616be68b716b.png',
       description: 'Bertanggung jawab atas desain dan pengembangan antarmuka website'
     },
     {
-      name: 'Budi Santoso',
-      role: 'Content Creator & Documentation',
+      name: 'Zahara Aini Kusuma',
+      role: 'Content Creator & DocumentationHead Of Agriculture',
       image: '/lovable-uploads/0256bbdc-e72c-460f-91ef-e15c217aad1e.png',
       description: 'Mengelola konten edukatif dan dokumentasi kegiatan desa'
     },
     {
-      name: 'Dewi Lestari',
+      name: 'Hilmia Salsabila',
       role: 'Marketing & Partnership',
       image: '/lovable-uploads/5156a629-12f0-43f1-a5ae-0d4b48acdfed.png',
       description: 'Mengembangkan strategi pemasaran dan kemitraan untuk produk desa'
     },
     {
-      name: 'Agus Widodo',
+      name: 'Nadya Tendra Sikki',
       role: 'Technical Support & Maintenance',
       image: '/lovable-uploads/72c90817-7ea1-4677-a40f-66265cea474c.png',
       description: 'Memastikan website berjalan lancar dan memberikan dukungan teknis'
     },
     {
-      name: 'Rina Marlina',
+      name: 'Muhammad Azhar Ahzami',
       role: 'Community Manager & Research',
       image: '/lovable-uploads/7114d40d-41ab-4eb7-98a7-2649ce9ed625.png',
       description: 'Mengelola komunitas online dan penelitian kebutuhan masyarakat'
