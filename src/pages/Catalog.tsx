@@ -28,7 +28,7 @@ const Catalog = () => {
       price: 'Rp20.000/kg',
       image: '/lovable-uploads/72c90817-7ea1-4677-a40f-66265cea474c.png',
       category: 'umbi',
-      rating: 4.6,
+      rating: 4.9,
       stock: 30,
       description: 'Talas organik berkualitas tinggi'
     },
@@ -38,7 +38,7 @@ const Catalog = () => {
       price: 'Rp25.000',
       image: '/lovable-uploads/9cdce8d7-fc10-4455-9822-c33b8810e7e4.png',
       category: 'tanaman_hias',
-      rating: 4.9,
+      rating: 4.8,
       stock: 15,
       description: 'Tanaman hias daun cantik'
     },
@@ -48,7 +48,7 @@ const Catalog = () => {
       price: 'Rp35.000',
       image: '/lovable-uploads/9cdce8d7-fc10-4455-9822-c33b8810e7e4.png',
       category: 'tanaman_hias',
-      rating: 4.7,
+      rating: 4.8,
       stock: 20,
       description: 'Tanaman penyerap polutan'
     },
@@ -58,7 +58,7 @@ const Catalog = () => {
       price: 'Rp12.000/kg',
       image: '/lovable-uploads/5156a629-12f0-43f1-a5ae-0d4b48acdfed.png',
       category: 'sayuran',
-      rating: 4.5,
+      rating: 4.8,
       stock: 25,
       description: 'Sayuran segar tanpa pestisida'
     },
