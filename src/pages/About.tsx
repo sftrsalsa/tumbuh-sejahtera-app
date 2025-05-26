@@ -9,7 +9,7 @@ const About = () => {
     {
       name: 'Mohamad Damar Purnama',
       role: 'Founder & CEO',
-      image: 'public/lovable-uploads/DSC00321.JPG,
+      image: '/lovable-uploads/DSC00321.JPG,
       description: 'Memimpin pengembangan website dan koordinasi tim untuk kemajuan desa'
     },
     {
