@@ -146,44 +146,6 @@ const About = () => {
             ))}
           </div>
         </div>
-
-        {/* Technology Stack */}
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <div className="flex items-center justify-center mb-6">
-            <Award className="h-8 w-8 text-green-600 mr-3" />
-            <h3 className="text-2xl font-bold text-green-800">Teknologi yang Digunakan</h3>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-            <div className="p-4">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-2xl font-bold text-blue-600">R</span>
-              </div>
-              <h4 className="font-semibold text-gray-800">React</h4>
-              <p className="text-sm text-gray-600">Frontend Framework</p>
-            </div>
-            <div className="p-4">
-              <div className="bg-cyan-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-2xl font-bold text-cyan-600">T</span>
-              </div>
-              <h4 className="font-semibold text-gray-800">Tailwind CSS</h4>
-              <p className="text-sm text-gray-600">Styling Framework</p>
-            </div>
-            <div className="p-4">
-              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-2xl font-bold text-purple-600">V</span>
-              </div>
-              <h4 className="font-semibold text-gray-800">Vite</h4>
-              <p className="text-sm text-gray-600">Build Tool</p>
-            </div>
-            <div className="p-4">
-              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-2xl font-bold text-green-600">L</span>
-              </div>
-              <h4 className="font-semibold text-gray-800">Lovable</h4>
-              <p className="text-sm text-gray-600">Development Platform</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
