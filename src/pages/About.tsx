@@ -8,7 +8,7 @@ const About = () => {
   const teamMembers = [
     {
       name: 'Salsa Nabila Safitri',
-      role: 'Kepala Desa & Project Leader',
+      role: 'CEO',
       image: '/lovable-uploads/eb20acab-a584-4931-b44f-936e74a28cf0.png',
       description: 'Memimpin pengembangan website dan koordinasi tim untuk kemajuan desa'
     },
