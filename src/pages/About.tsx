@@ -15,25 +15,25 @@ const About = () => {
     {
       name: 'Salsa Nabila Safitri',
       role: 'Chief Technology Officer',
-      image: 'public/lovable-uploads/Gambar WhatsApp 2025-05-26 pukul 12.08.17_ca6919d8.jpg',
+      image: '/lovable-uploads/Gambar WhatsApp 2025-05-26 pukul 12.08.17_ca6919d8.jpg',
       description: 'Bertanggung jawab atas desain dan pengembangan antarmuka website'
     },
     {
       name: 'Zahara Aini Kusuma',
       role: 'Content Creator & DocumentationHead Of Agriculture',
-      image: 'public/lovable-uploads/IMG-20250320-WA0022.jpg',
+      image: '/lovable-uploads/IMG-20250320-WA0022.jpg',
       description: 'Mengelola konten edukatif dan dokumentasi kegiatan desa'
     },
     {
       name: 'Hilmia Salsabila',
       role: 'Marketing & Partnership',
-      image: 'public/lovable-uploads/IMG_7561.JPG',
+      image: '/lovable-uploads/IMG_7561.JPG',
       description: 'Mengembangkan strategi pemasaran dan kemitraan untuk produk desa'
     },
     {
       name: 'Nadya Tendra Sikki',
       role: 'Technical Support & Maintenance',
-      image: 'public/lovable-uploads/IMG_20210516_153733.jpg',
+      image: '/lovable-uploads/IMG_20210516_153733.jpg',
       description: 'Memastikan website berjalan lancar dan memberikan dukungan teknis'
     },
     {
