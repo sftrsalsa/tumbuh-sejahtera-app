@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -32,7 +31,7 @@ const FeaturedProducts = () => {
       name: 'Talas Khas Sukaharja',
       description: 'Talas dari Desa Sukaharja dikenal sebagai salah satu komoditas unggulan dengan tekstur lembut dan rasa gurih alami. Talas ini cocok untuk diolah menjadi berbagai makanan tradisional seperti kolak, keripik, atau dodol talas.',
       image: '/lovable-uploads/3dc7840a-e5e1-4574-9556-c94ae6eaad23.png',
-      rating: 4.6,
+      rating: 4.9,
       category: 'Umbi',
       keunggulan: [
         'Ditanam secara organik dengan pupuk alami',
@@ -67,10 +66,7 @@ const FeaturedProducts = () => {
   ];
 
   const handleOrderProduct = (productName: string) => {
-    toast({
-      title: "Pesanan Dikonfirmasi",
-      description: `Terima kasih telah memesan ${productName}. Tim kami akan segera menghubungi Anda.`,
-    });
+    window.location.href = '/order';
   };
 
   return (

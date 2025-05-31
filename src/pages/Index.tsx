@@ -100,7 +100,7 @@ const Index = () => {
       name: 'Talas Khas Sukaharja',
       description: 'Talas dari Desa Sukaharja dikenal sebagai salah satu komoditas unggulan dengan tekstur lembut dan rasa gurih alami. Talas ini cocok untuk diolah menjadi berbagai makanan tradisional seperti kolak, keripik, atau dodol talas.',
       image: '/lovable-uploads/3dc7840a-e5e1-4574-9556-c94ae6eaad23.png',
-      rating: 4.6,
+      rating: 4.9,
       category: 'Umbi',
       keunggulan: [
         'Ditanam secara organik dengan pupuk alami',
@@ -152,7 +152,8 @@ const Index = () => {
       'cart': '/catalog',
       'education': '/education',
       'blog': '/blog',
-      'gallery': '/gallery'
+      'gallery': '/gallery',
+      'order': '/order'
     };
     
     if (routeMap[featureId]) {
@@ -259,9 +260,9 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3"
-                onClick={() => handleNavClick('education')}
+                onClick={() => handleFeatureClick('order')}
               >
-                Konten Edukatif
+                Form Pemesanan
               </Button>
             </div>
           </div>
@@ -416,10 +417,10 @@ const Index = () => {
                   <Button 
                     size="sm"
                     className="w-full bg-green-600 hover:bg-green-700"
-                    onClick={() => handleFeatureClick('catalog')}
+                    onClick={() => handleFeatureClick('order')}
                   >
                     <ShoppingCart className="h-4 w-4 mr-1" />
-                    Lihat Detail
+                    Pesan Sekarang
                   </Button>
                 </CardContent>
               </Card>

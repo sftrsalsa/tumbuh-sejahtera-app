@@ -55,7 +55,7 @@ const Catalog = () => {
     {
       id: 5,
       name: 'Sayuran Organik',
-      price: 'Rp12.000/kg',
+      price: 'Rp8.000/kg',
       image: '/lovable-uploads/5156a629-12f0-43f1-a5ae-0d4b48acdfed.png',
       category: 'sayuran',
       rating: 4.8,
@@ -91,6 +91,10 @@ const Catalog = () => {
       title: "Ditambahkan ke Keranjang",
       description: `${productName} berhasil ditambahkan ke keranjang belanja`,
     });
+  };
+
+  const handleOrderProduct = (productName: string) => {
+    window.location.href = '/order';
   };
 
   return (
@@ -170,13 +174,22 @@ const Catalog = () => {
                     </div>
                   </div>
                 </div>
-                <Button 
-                  className="w-full bg-green-600 hover:bg-green-700"
-                  onClick={() => handleAddToCart(product.name)}
-                >
-                  <ShoppingCart className="h-4 w-4 mr-2" />
-                  Tambah ke Keranjang
-                </Button>
+                <div className="flex gap-2">
+                  <Button 
+                    className="flex-1 bg-green-600 hover:bg-green-700"
+                    onClick={() => handleOrderProduct(product.name)}
+                  >
+                    <ShoppingCart className="h-4 w-4 mr-1" />
+                    Pesan
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    className="flex-1"
+                    onClick={() => handleAddToCart(product.name)}
+                  >
+                    Keranjang
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
