@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -197,7 +198,7 @@ const Index = () => {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-green-800">Suka Belanja di Harja</h1>
-                <p className="text-green-600 text-sm">Desa Sukaharja Digital Panen Produk Klik Sekejap</p>
+                <p className="text-green-600 text-sm">Desa Sukaharja Panen Produk Klik Sekejap</p>
               </div>
             </div>
             <nav className="hidden md:flex space-x-6">
@@ -231,7 +232,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-5xl font-bold mb-6 leading-tight">
               DESA SUKAHARJA
-              <span className="block text-yellow-300 text-3xl mt-2">DIGITAL PANEN PRODUK KLIK SEKEJAP</span>
+              <span className="block text-yellow-300 text-3xl mt-2">PANEN PRODUK KLIK SEKEJAP</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Button 
@@ -516,7 +517,7 @@ const Index = () => {
                   </div>
                   <div>
                     <img 
-                      src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=500&h=400&fit=crop" 
+                      src="/lovable-uploads/14c63076-ed5d-4bc3-8049-990eeef850f9.png" 
                       alt="Produk Berkualitas"
                       className="w-full h-64 object-cover rounded-lg shadow-lg"
                     />
@@ -681,7 +682,7 @@ const Index = () => {
                     onClick={() => handleFeatureClick('village')}
                     className="hover:text-white transition-colors text-left"
                   >
-                    Kabupaten Sukabumi
+                    Kabupaten Bogor
                   </button>
                 </li>
               </ul>
