@@ -13,7 +13,7 @@ const FeaturedProducts = () => {
     {
       name: 'Nanas Gati Sukaharja',
       description: 'Nanas Gati adalah varietas nanas lokal Bogor yang terkenal dengan rasa manis segar dan sedikit asam. Daging buahnya renyah, berair, dan memiliki aroma khas yang menggugah selera.',
-      image: '/lovable-uploads/c62d382b-9962-490e-a225-3a092ca53b0b.png',
+      image: '/lovable-uploads/0f7f2978-92cd-4ff3-ad28-f52723965191.png',
       rating: 4.8,
       category: 'Buah',
       keunggulan: [
@@ -31,7 +31,7 @@ const FeaturedProducts = () => {
     {
       name: 'Talas Khas Sukaharja',
       description: 'Talas dari Desa Sukaharja dikenal sebagai salah satu komoditas unggulan dengan tekstur lembut dan rasa gurih alami. Talas ini cocok untuk diolah menjadi berbagai makanan tradisional seperti kolak, keripik, atau dodol talas.',
-      image: '/lovable-uploads/72c90817-7ea1-4677-a40f-66265cea474c.png',
+      image: '/lovable-uploads/3dc7840a-e5e1-4574-9556-c94ae6eaad23.png',
       rating: 4.6,
       category: 'Umbi',
       keunggulan: [
@@ -49,7 +49,7 @@ const FeaturedProducts = () => {
     {
       name: 'Tanaman Hias Sukaharja',
       description: 'Desa Sukaharja menyediakan beragam tanaman hias berkualitas untuk mempercantik rumah, taman, atau ruang kerja.',
-      image: '/lovable-uploads/9cdce8d7-fc10-4455-9822-c33b8810e7e4.png',
+      image: '/lovable-uploads/05fdab06-fb90-402c-ac1f-68de55ba6387.png',
       rating: 4.9,
       category: 'Hias',
       keunggulan: [
